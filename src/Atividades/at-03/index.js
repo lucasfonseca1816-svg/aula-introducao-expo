@@ -23,44 +23,47 @@ export default function Atividade03() {
                 Exemplo 3
             </Text>
 
-            <TouchableOpacity
+            {/* <TouchableOpacity
                 onPress={() => alert('Olá, mundo!')}
                 style={styles.button}
             >
                 <Text style={styles.textButton}>
                     Diga "Olá, mundo!"
                 </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <View style={styles.counter}>
-                <Text style={styles.container}>{numero}</Text>
-                <TouchableOpacity
-                    onPress={() => AddNumber()}
-                    style={styles.button}
-                >
-                    <Text style={styles.textButton} >
-                        + 1
-                    </Text>
+                <View style={styles.textZero}>
+                    <TouchableOpacity
+                        onPress={() => AddNumber()}
+                        style={styles.button}
+                    >
+                        <Text style={styles.textButton} >
+                            + 1
+                        </Text>
 
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => SubtractNumber()}
-                    style={styles.button}
-                >
-                    <Text style={styles.textButton}>
-                        - 1
-                    </Text>
-                </TouchableOpacity>
+                    </TouchableOpacity>
+                    <Text style={styles.container}>{numero}</Text>
+                    <TouchableOpacity
+                        onPress={() => SubtractNumber()}
+                        style={styles.button}
+                    >
+                        <Text style={styles.textButton}>
+                            - 1
+                        </Text>
+                    </TouchableOpacity>
+                </View>
                 <TouchableOpacity
                     onPress={() => ClearNumber()}
                     style={styles.button}
                 >
+                
                     <Text style={styles.textButton}>
                         Zerar
                     </Text>
                 </TouchableOpacity>
             </View>
-        </View>
+         </View>
 
     );
 }
@@ -88,6 +91,7 @@ const styles = StyleSheet.create({
         height: 60,
         justifyContent: 'center',
         marginTop: 10,
+        padding: 8,
     },
 
     textButton: {
@@ -109,5 +113,13 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontWeight: 'bold',
         padding: 8,
-    }
+    },
+
+     textZero: {
+        borderWidth: 4,
+        borderColor: '#9E9E9E',
+        padding: 8,
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
 });
